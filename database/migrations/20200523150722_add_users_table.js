@@ -11,7 +11,7 @@ exports.up = function(knex) {
       .unique()
       .index();
 
-    table.float("height", 8, 3).notNullable();
+    table.float("height", 8, 4).notNullable();
 
     table
       .timestamp("craete_at")
