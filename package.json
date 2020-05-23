@@ -6,7 +6,9 @@
   "author": "Sho Ogawa",
   "scripts": {
     "dev": "nodemon ./index.js",
-    "lint": "yarn eslint --fix"
+    "lint": "yarn eslint --fix",
+    "migrate": "knex migrate:latest --knexfile database/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile database/knexfile.js"
   },
   "husky": {
     "hooks": {
