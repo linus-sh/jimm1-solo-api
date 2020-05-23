@@ -2,9 +2,6 @@
 const express = require("express");
 const app = express();
 
-//ルートディレクトリにindex.htmlを配置
-app.use(express.static("./src/"));
-
 //body-parser
 app.use(express.json());
 
