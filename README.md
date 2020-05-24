@@ -47,7 +47,7 @@ Postgress のインストール後、ターミナルで以下のコマンドを�
 ・records
 "id" : interger, autoincrement, notnullable, index
 "user_id" : integer, references(table: "users", culomn: "id"),notNullable
-"data" : date, notNullable
+"date" : date, notNullable
 "weights" : float(8 byte, 3 digits), notNullable
 "bmi" : float(8 byte, 3 digits), notNullable
 "sleeping" : float(8 byte, 3 digits), notNullable
@@ -97,7 +97,7 @@ newHeight:　 new_user_height
 
 ・「Get Record By User」ボタン
 指定したユーザーの記録を取得します。
-`http://localhost:3000/api/record/:name`に対して GET すると実行されます。対象のユーザーは`:name`で指定します。
+`http://localhost:3000/api/record/:id`に対して GET すると実行されます。対象のユーザーは`:id`でユーザー ID で指定します。
 
 ・「Register New Record」ボタン
 指定したユーザーの健康情報を登録します。
@@ -112,7 +112,7 @@ sleeping: "target_sleep_time(hour)"
 
 ・「Fix record」ボタン
 登録済みの健康情報を修正します。
-`http://localhost:3000/api/record/:name` に対して以下の形式で新規ユーザー情報を含んだ body を json 形式で PATACH すると実行されます。対象のユーザーは`:name`で指定します。一度の PATCH で修正できるのは date,weights,sleeping のうち一つだけです。
+`http://localhost:3000/api/record/:id` に対して以下の形式で新規ユーザー情報を含んだ body を json 形式で PATACH すると実行されます。対象の record の id は`:id`で指定します。一度の PATCH で修正できるのは date,weights,sleeping のうち一つだけです。
 
 body
 {
